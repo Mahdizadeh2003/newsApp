@@ -1,6 +1,7 @@
 package com.newsapp
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,7 +12,7 @@ import com.bumptech.glide.Glide
 
 class NewsAdopter(var newsList: MutableList<News>, private var context:Context) :
     RecyclerView.Adapter<NewsAdopter.ViewHolder>() {
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView
         val description: TextView
         val dateAndWriter: TextView
@@ -23,6 +24,11 @@ class NewsAdopter(var newsList: MutableList<News>, private var context:Context) 
                 description = findViewById(R.id.descTV)
                 dateAndWriter = findViewById(R.id.dateWriterTV)
                 image = findViewById(R.id.imageView)
+                title.setOnClickListener {
+                    val intent = Intent(context , WebPageActivity::class.java)
+                    intent.putExtra("url" ,newsList[adapterPosition].url )
+                    context.startActivity(intent)
+                }
 
             }
         }
