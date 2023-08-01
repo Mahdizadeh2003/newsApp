@@ -1,6 +1,6 @@
-package com.newsapp
+package com.newsapp.API
 
-import okhttp3.Response
+import com.newsapp.Model.ResponseModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 

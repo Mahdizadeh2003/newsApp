@@ -1,4 +1,4 @@
-package com.newsapp
+package com.newsapp.Adaptor
 
 import android.content.Context
 import android.content.Intent
@@ -9,6 +9,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.newsapp.Model.News
+import com.newsapp.R
+import com.newsapp.activity.WebPageActivity
 
 class NewsAdopter(var newsList: MutableList<News>, private var context:Context) :
     RecyclerView.Adapter<NewsAdopter.ViewHolder>() {
